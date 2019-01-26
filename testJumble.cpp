@@ -1,13 +1,7 @@
 /*
- * A testing class for your JumblePuzzle class and its exception. A few unit
- * tests are provided but you will need to add a few more.
- * The code also contains a simple function that allows you to play the game, and
- * another function that you can use to display the puzzle.  You should not need to
- * alter either of these supplied functions unless you wish to enhance them without
- * changing the way JumblePuzzle operates.
- *
- * If you wish to build a GUI interface for the puzzle, you may certainly do so, as
- * long as the unit tests are still carried out.
+ * A testing class for your JumblePuzzle class and its exception. 
+ * The code also contains a simple function written by Professor McLeod that allows you to play the game, and
+ * another function that you can use to display the puzzle.
  */
 #include <string>
 #include <iostream>
@@ -80,12 +74,9 @@ void playGame() {
 	jp = nullptr;
 } // end playGame
 
-// Add unit tests to this function.  A few unit tests are provided to test your copy constructor,
-// your assignment overloading and aliasing.  You need to write some more tests before these ones.
-// Test the public members only ("Black Box Testing").  Test to make sure that exceptions are
-// thrown when they should be, that the puzzle is the correct size and is formed properly, and
-// that the accessors return what they should.  You can add these unit tests as you develop your
-// code ("TDD") and comment out the supplied tests until you are ready for them.
+// Unit tests are provided to test your copy constructor, your assignment overloading and aliasing,
+// that exceptions are thrown when they should be, that the puzzle is the correct size and is formed properly, and
+// that the accessors return what they should.
 void testJumble() {
 
 	// Test copy constructor for proper operation
@@ -131,7 +122,7 @@ void testJumble() {
 
 	// Test self-assignment
 	// This shows as a "bug", which it should do.  However, you should still
-	// be able to build and run your program.
+	// be able to build and run program.
 	jp4 = jp4;
 	cout << "Should be same as original 4:" << endl;
 	showJumble(jp4.getJumble(), sz);
@@ -139,14 +130,7 @@ void testJumble() {
 	// Test for a memory leak.
 	// This is a pretty slow test and it may be that the limit of the loop
 	// will not be large enough to show a memory leak, especially if you have
-	// quite a bit of RAM.  In my tests I found that with about 4.0 GB free this
-	// test would cause a memory leak failure when loop Limit was 1,000,000.
-	// Start with a loop limit of 100 or 1000 and increase it by a factor of 10.
-	// The other way to see a memory leak failure is to have task manager show your
-	// memory consumption as the program runs.  If it keeps climbing - you have a problem,
-	// even if you don't run out of memory.
-	// Of course you won't get a memory leak error if you are using the heap properly,
-	// and the program will terminate normally!
+	// quite a bit of RAM.
 	int loopLimit = 1000;
 	for (int i = 0; i < loopLimit; i++)
 		JumblePuzzle jp("HIDDENWORD", "hard");
@@ -182,8 +166,6 @@ void testJumble() {
 int main() {
 
 	testJumble();
-
-	// Make sure your class works before you play the game!
 	playGame();
 
 	return 0;
